@@ -21,7 +21,7 @@ main {
     
     background-color: rgba(255, 255, 255, 0.896);
     width: 380px;
-    height: 610px ;
+    height: 605px ;
     border-radius: 15px;
     box-shadow: 0px 7px 10px 0px #0000000d;
 }
@@ -96,4 +96,8 @@ label {
     background-color: rgb(80, 126, 252);
     color: white;
     font-size: 0.90em;
+}
+
+#infos {
+    margin-top: -10px;
 }

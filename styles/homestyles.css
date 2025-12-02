@@ -70,14 +70,20 @@ h1 {
 }
 
 #mycont {
-    display: block;
+    display: flex;
+    align-items: center;
     background-color:white ;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.045);
     border-radius: 8px;
     height: 60px;
     width: 297px;
     margin: -12px auto auto auto;
+    text-decoration: none;
 
+}
+
+.line {
+    white-space: pre-line;
 }
 
 /* pensar em uma tela de login */
