@@ -84,9 +84,9 @@ h1 {
 
 }
 
-.line {
+/* .line {
     white-space: pre-line;
-}
+} */
 
 #mycont img {
     width: 50px;
@@ -94,8 +94,22 @@ h1 {
     
 }
 
-#mycont pre {
+#mycont #infosy {
    margin: 12px ;
+}
+
+#divname {
+    color: rgb(56, 56, 56);
+    font-weight: bold;
+}
+
+#divnumber {
+    font-weight: 100;
+    color:#253242da;
+}
+
+#infosy div {
+    padding: 1px;
 }
 
 /* pensar em uma tela de login */

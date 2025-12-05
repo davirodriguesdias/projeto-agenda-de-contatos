@@ -17,26 +17,26 @@
             </div>
         </div>
         <div id="infos">
-            <form action="#">
+            <form action="pages/home.html">
                 <label for="namef">
                     Name
-                    <input type="text" id="name">
+                    <input name="user" type="text" id="name" required>
                 </label>
                 <label for="telf">
                     Phone Number
-                    <input type="tel" id="tel">
+                    <input name="phone" type="tel" id="tel" required>
                 </label>
                 <label for="emailf">
                     Email
-                    <input type="email" id="email">
+                    <input type="email" id="email" required>
                 </label>
                 <label for="addresf">
                     Addres
-                    <input type="text" id="addres">
+                    <input type="text" id="addres" required>
                 </label>
                 <label for="datef">
                     Date
-                    <input type="date" name="" id="date">
+                    <input type="date" name="" id="date" required>
                 </label>
                 <input onclick="RegisterYou()" id="register" type="submit" value="Register Contact">
             </form>
