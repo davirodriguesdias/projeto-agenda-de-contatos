@@ -3,12 +3,30 @@
 //     const yourphone = document.body.querySelector("#tel")
 //     const youremail = document.body.querySelector("#email")
 //     const youraddres = document.body.querySelector("#addres")
-//     const yourdate = document.body.querySelector("#date")
+const file = document.body.querySelector("#imginput")
+const form = document.body.querySelector("#formuser")
 
-// function RegisterYou() {
+form.addEventListener("submit", function(e) {
+    e.preventDefault()
+// file.files[0] == null
+    if(!file.files[0]){
+        form.submit()
+        return;
+    }
 
-//     // sessionStorage.setItem("username", yourname.value)
+
+    const reader = new FileReader();
+    reader.onload = function() {
+    sessionStorage.setItem("userimg", reader.result);
+    form.submit()
+    };
+
+reader.readAsDataURL(file.files[0]);
+
+
+
+});
 //     // sessionStorage.setItem("numberuser", yourphone.value)
 
-// esta é outra forma de usar os dados  }
+// esta é outra forma de usar os dados
 

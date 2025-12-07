@@ -13,11 +13,11 @@
             <img src="images/default_user_image.png" alt="YourProfile">
             <div id="imgcontainer">
                 <!-- accept="images" -->
-                <input id="imginput" type="file" src="images/default_user_image.png" alt="InputImage">
+                <input id="imginput" type="file" src="" alt="InputImage">
             </div>
         </div>
         <div id="infos">
-            <form action="pages/home.html">
+            <form id="formuser" method="get" action="pages/home.html">
                 <label for="namef">
                     Name
                     <input name="user" type="text" id="name" required>
@@ -38,7 +38,7 @@
                     Date
                     <input type="date" name="" id="date" required>
                 </label>
-                <input onclick="RegisterYou()" id="register" type="submit" value="Register Contact">
+                <input id="register" type="submit" value="Register Contact">
             </form>
         </div>
     </main>
