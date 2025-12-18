@@ -6,8 +6,8 @@
 }
 
 body, html {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color:#F2F4F7 ;
 }
 
@@ -39,6 +39,7 @@ h1 {
 
 img {
     width: 80px;
+    height: 80px;
     border-radius: 50%;
     display: block;
     margin: auto;

@@ -5,6 +5,20 @@
 //     const youraddres = document.body.querySelector("#addres")
 const file = document.body.querySelector("#imginput")
 const form = document.body.querySelector("#formuser")
+const imagedefault = document.body.querySelector("#imgdefault")
+
+file.addEventListener("change", function(){
+    const reader = new FileReader()
+
+    if(!file.files[0]){
+        return
+    }
+    
+    reader.onload = function(){
+        imagedefault.src = reader.result
+    }
+    reader.readAsDataURL(file.files[0])
+})
 
 form.addEventListener("submit", function(e) {
     e.preventDefault()
