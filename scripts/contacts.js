@@ -15,28 +15,25 @@ divname.innerHTML = username
 divnumber.innerHTML = usernumber
 
 
-if(!profile) {
+if (!profile) {
     userimg.src = "../images/default_user_image.png"
-    }
+}
 else {
     userimg.src = profile
 }
 
-addcontact.addEventListener("click", function(){
-    // title = document.createElement("h2")
-    // title = document.createElement("img")
-    // uploadimg = document.createElement("input")
-    // nameinput = document.createElement("input")
-    // addresinput = document.createElement("input")
-    // emailinput = document.createElement("input")
-    // datainput = document.createElement("input")
-    // submitinput = document.createElement("input")
-    // form = document.createElement("form")
+addcontact.addEventListener("click", function () {
     const modalback = document.createElement("div") //fundo do modal
     modalback.classList.add("modalback")
     modal = document.createElement("div") //modal
     modal.classList.add("modal")
     document.body.appendChild(modalback)
+
+    modal.innerHTML = `
+    <h2>Add Contact</h2>
+    
+    `
+
     modalback.appendChild(modal)
 
 })
