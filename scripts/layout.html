@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=upload" />
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styleteste.css">
 </head>
+
 <body>
-    <form action="">
+
+    <form id="formaddcontact" action="">
+
         <h2>Add Contact</h2>
+
         <div id="conteinerheader">
+
             <img src="../images/default_user_image.png" alt="">
-            <input id="uploadimg" type="file" name="" id="">
+            <label for="uploadimg">
+                <span class="material-symbols-outlined">
+                    upload
+                </span>
+                Upload
+                <input id="uploadimg" type="file" name="" hidden>
+            </label>
+
         </div>
+
         <div id="conteinermain">
-            <label for="">Name<input class="configinput" type="text" name="" id=""></label>
-            <label for="">Addres<input class="configinput" type="text" name="" id=""></label>
-            <label for="">Email<input class="configinput" type="email" name="" id=""></label>
-            <label for="">Phone<input class="configinput" type="tel" name="" id=""></label>
+
+            <label for="">Name<input class="configinput" type="text" name="" id="" required></label>
+            <label for="">Addres<input class="configinput" type="text" name="" id="" required></label>
+            <label for="">Email<input class="configinput" type="email" name="" id="" required></label>
+            <label for="">Phone<input class="configinput" type="tel" name="" id="" required></label>
             <input id="inputsave" type="submit" value="Save">
+
         </div>
+
     </form>
+
 </body>
+
 </html>

@@ -22,6 +22,8 @@ else {
     userimg.src = profile
 }
 
+//separar codigos em documentos diferentes
+
 addcontact.addEventListener("click", function () {
     const modalback = document.createElement("div") //fundo do modal
     modalback.classList.add("modalback")
@@ -30,7 +32,34 @@ addcontact.addEventListener("click", function () {
     document.body.appendChild(modalback)
 
     modal.innerHTML = `
-    <h2>Add Contact</h2>
+    <form id="formaddcontact" action="">
+
+        <h2>Add Contact</h2>
+
+        <div id="conteinerheader">
+
+            <img src="../images/default_user_image.png" alt="">
+            <label for="uploadimg">
+                <span class="material-symbols-outlined">
+                    upload
+                </span>
+                Upload
+                <input id="uploadimg" type="file" name="" hidden>
+            </label>
+
+        </div>
+
+        <div id="conteinermain">
+
+            <label for="">Name<input class="configinput" type="text" name="" id="" required></label>
+            <label for="">Addres<input class="configinput" type="text" name="" id="" required></label>
+            <label for="">Email<input class="configinput" type="email" name="" id="" required></label>
+            <label for="">Phone<input class="configinput" type="tel" name="" id="" required></label>
+            <input id="inputsave" type="submit" value="Save">
+
+        </div>
+
+    </form>
     
     `
 
