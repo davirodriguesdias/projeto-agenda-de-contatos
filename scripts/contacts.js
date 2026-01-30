@@ -24,10 +24,42 @@ else {
     userimg.src = profile
 }
 
+
 //separar codigos em documentos diferentes
 
-function createContact() {
+let blobURLProfile = null
+
+function createContact(namevalue, phonevalue) {
+
+
     //aqui ficara o codigo de criar contato para fins de organização de codigo
+    let contactAdd = document.createElement("a")
+    contactAdd.classList.add("contacts")
+
+    let contactImgAdd = document.createElement("img")
+    contactImgAdd.classList.add("contactimg")
+    if(blobURLProfile) {
+        contactImgAdd.src = blobURLProfile
+    } else {
+        contactImgAdd.src = "../images/default_user_image.png"
+    }
+
+    let contactInfos = document.createElement("div")
+    contactInfos.classList.add("infos")
+
+    let contactName = document.createElement("div")
+    contactName.classList.add("divname")
+    contactName.textContent = namevalue
+
+    let contactPhone = document.createElement("div")
+    contactPhone.classList.add("divnumber")
+    contactPhone.textContent = phonevalue
+
+    conteinerContacts.appendChild(contactAdd)
+    contactAdd.appendChild(contactImgAdd)
+    contactAdd.appendChild(contactInfos)
+    contactInfos.appendChild(contactName)
+    contactInfos.appendChild(contactPhone)
 }
 
 addcontact.addEventListener("click", function () {
@@ -44,7 +76,7 @@ addcontact.addEventListener("click", function () {
 
         <div id="conteinerheader">
 
-            <img src="../images/default_user_image.png" alt="">
+            <img id="imgcontact" src="../images/default_user_image.png" alt="">
             <label for="uploadimg">
                 <span class="material-symbols-outlined">
                     upload
@@ -72,44 +104,60 @@ addcontact.addEventListener("click", function () {
     modalback.appendChild(modal)
 
     const formcontact = document.body.querySelector("#formaddcontact");
+    const uploadImg = document.body.querySelector("#uploadimg")
+    const imgContact = document.body.querySelector("#imgcontact")
+    let blobURL = null
+    
+
+    uploadImg.addEventListener("change", function () {
+
+        if (!uploadImg.files[0]) {
+            return
+        }
+
+        if (blobURL) {
+            URL.revokeObjectURL(blobURL)
+        }
+
+        blobURL = URL.createObjectURL(uploadImg.files[0]);
+        imgContact.src = blobURL
+
+    })
+
 
     formcontact.addEventListener("submit", e => {
-    e.preventDefault();
+        e.preventDefault();
 
-    let contactNameInput = document.body.querySelector("#contactNameInput").value
-    let contactPhoneInput = document.body.querySelector("#contactPhoneInput").value
+        if(uploadImg.files[0]) {
+            blobURLProfile = URL.createObjectURL(uploadImg.files[0]);
+            //ver uma forma melhor depois ou verificar se esta certo
+        }
 
-    let contactAdd = document.createElement("a")
-    contactAdd.classList.add("contacts")
+        if (blobURL) {
+            URL.revokeObjectURL(blobURL)
+            blobURL = null
+        }
 
-    let contactImgAdd = document.createElement("img")
-    contactImgAdd.classList.add("contactimg")
-    contactImgAdd.src="../images/default_user_image.png"
 
-    let contactInfos = document.createElement("div")
-    contactInfos.classList.add("infos")
+        let contactNameInput = document.body.querySelector("#contactNameInput").value
+        let contactPhoneInput = document.body.querySelector("#contactPhoneInput").value
 
-    let contactName = document.createElement("div")
-    contactName.classList.add("divname")
-    contactName.textContent = contactNameInput
+        modalback.style.display = "none"
 
-    let contactPhone = document.createElement("div")
-    contactPhone.classList.add("divnumber")
-    contactPhone.textContent = contactPhoneInput
-
-    conteinerContacts.appendChild(contactAdd) 
-    contactAdd.appendChild(contactImgAdd)
-    contactAdd.appendChild(contactInfos)
-    contactInfos.appendChild(contactName)
-    contactInfos.appendChild(contactPhone)
-
-    modalback.style.display = "none"
-
-    // contactsCreate();
+        createContact(contactNameInput, contactPhoneInput);
 
 
 
-})
+    })
+
+//permitir criar multiplos contatos
+//entender por que fica branco ao criar outro contato
+//aceitar somente imagens
+
+
+
+
+
 
 });
 

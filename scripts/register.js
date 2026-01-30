@@ -13,6 +13,9 @@ file.addEventListener("change", function(){
     if(!file.files[0]){
         return
     }
+
+    //depois alterar para URL Blob
+    //verificar se clicou na imagem errada
     
     reader.onload = function(){
         imagedefault.src = reader.result
